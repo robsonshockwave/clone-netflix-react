@@ -2,7 +2,6 @@
 
 by https://www.youtube.com/watch?v=tBweoUiMsDg
 <br>
-data from https://api.themoviedb.org/3
 
 <h3>Get your API_KEY and config in Tmdb API_KEY</h3>
 
