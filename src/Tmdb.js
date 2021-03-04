@@ -1,7 +1,7 @@
 const API_KEY = '1b7871cc7dc5397128505752cd86824e';
 const API_BASE = 'https://api.themoviedb.org/3';
 
-/*
+/* 
 - originais da netflix
 - recomendados (trending)
 - em alta (top rated)
@@ -63,5 +63,25 @@ export default {
                 items : await basicFecth(`/discover/movie?with_genres=99&language=pt-BR&api_key=${API_KEY}`)
             },
         ]
-        },
+    },
+
+    getMovieInfo: async (movieId, type) => {
+        let info = {};
+
+        if(movieId) {
+            switch(type) {
+                case 'movie':
+                    info = await basicFecth(`/movie/${movieId}?language=pt-BR&api_key=${API_KEY}`);
+                break;
+                case 'tv':
+                    info = await basicFecth(`/tv/${movieId}?language=pt-BR&api_key=${API_KEY}`);
+                break;
+                default:
+                    info = null;
+                break;
+            }
+        }
+
+        return info;
+    }
 }
