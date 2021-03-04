@@ -3,7 +3,7 @@
 by https://www.youtube.com/watch?v=tBweoUiMsDg
 <br>
 
-<h4>Clone da Netflix com ReactJS consumindo API externa TMDB./h4>
+<h4>Clone da Netflix com ReactJS consumindo API externa TMDB.</h4>
 
 ## Layouts
 
