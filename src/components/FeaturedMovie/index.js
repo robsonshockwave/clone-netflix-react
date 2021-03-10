@@ -2,10 +2,17 @@ import React from 'react';
 import './style.css';
 
 export default ({item}) => {
+    console.log(item);
+
     let firstDate = new Date(item.first_air_date);
     let genres = [];
     for(let i in item.genres) {
         genres.push( item.genres[i].name);
+    }
+
+    let descr = item.overview;
+    if(descr.length > 200){
+        descr = descr.substring(0, 200) + '...';
     }
 
     return (
@@ -24,7 +31,7 @@ export default ({item}) => {
                         <div className="featured--year">{firstDate.getFullYear()}</div>
                         <div className="featured--seasons">{item.number_of_seasons} temporada{item.number_of_seasons !== 1 ? 's' : ''}</div>
                     </div>
-                    <div className="featured--descriptions">{item.overview}</div>
+                    <div className="featured--descriptions">{descr}</div>
                     <div className="featured--buttons">
                         <a href={`/watch/${item.id}`} className="featured--wacthbutton">► Assistir</a>
                         <a href={`/list/add/${item.id}`} className="featured--mylistbutton">+ Minha Lista</a>
